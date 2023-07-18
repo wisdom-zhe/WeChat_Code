@@ -31,7 +31,26 @@
             }
             
         }
+        ,{
+            "path" : "subpkg/food_details/food_details",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "subpkg/goods_list/goods_list",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
+  "subPackages": [
+    
+  ],
 	"globalStyle": {
 		"navigationBarTitleText": "东哥优购",
 		"navigationBarTextStyle": "white",
