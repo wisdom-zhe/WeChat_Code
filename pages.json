@@ -1,15 +1,14 @@
 {
 	"pages": [{
             "path" : "pages/home/home",
-            "style" :                                                                                    
+            "style" :                                                                    
             {
                 "enablePullDownRefresh": false
             }
-            
         }
         ,{
             "path" : "pages/my/my",
-            "style" :                                                                                    
+            "style" :                                                                   
             {
                 "enablePullDownRefresh": false
             }
@@ -17,7 +16,7 @@
         }
         ,{
             "path" : "pages/cart/cart",
-            "style" :                                                                                    
+            "style" :                                                                   
             {
                 "enablePullDownRefresh": false
             }
@@ -25,31 +24,27 @@
         }
         ,{
             "path" : "pages/cate/cate",
-            "style" :                                                                                    
+            "style" :                                                                   
             {
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "subpkg/food_details/food_details",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "subpkg/goods_list/goods_list",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false
-            }
-            
         }
     ],
-  "subPackages": [
     
+"subPackages": [{
+          "root": "subpkg",
+          "pages": [{
+            "path" : "goods_details/goods_details"
+          },
+          {
+             "path" : "goods_list/goods_list"
+          },
+          {
+            "path" : "search/search"
+          }
+          
+          ]
+        }
   ],
 	"globalStyle": {
 		"navigationBarTitleText": "东哥优购",

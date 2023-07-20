@@ -1,5 +1,10 @@
 <template>
   <view>
+    <!-- 自定义搜索框样式 -->
+    <!-- <my-search :bgcolor="'#000000'" :radius="'3'"></my-search> -->
+    <!-- 自定义组件的点击事件需要在自定义组件里面去调用，从内部调用外部点击事件要通过$emit去触发 -->
+    <my-search @click="gotoSearch"></my-search>
+    
     <view class="scroll-view-container" >
       <!-- 左侧滑动区域 -->
       <scroll-view class="left-scroll-view"  scroll-y :style="{height: wh+'px'}">
@@ -48,7 +53,7 @@
     // 初始页面时候加载
     onLoad(){
       const sysInfo =uni.getSystemInfoSync()
-      this.wh=sysInfo.windowHeight // 获取屏幕可用高度
+      this.wh=sysInfo.windowHeight - 50 // 获取屏幕可用高度,因为搜索框占了50px
       this.getCateList()
     },
     
@@ -78,7 +83,15 @@
         uni.navigateTo({
           url:'/subpkg/goods_list/goods_list?cid='+item.cat_id
         })
+      },
+      
+      // 跳转到搜索页面
+      gotoSearch(){
+        uni.navigateTo({
+          url:'/subpkg/search/search'
+        })
       }
+      
     }
   }
 </script>

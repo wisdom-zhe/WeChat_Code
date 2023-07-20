@@ -1,5 +1,10 @@
 <template>
   <view>
+    <!-- 搜索区域 -->
+    <view class="search-box">
+      <my-search @click="gotoSearch"></my-search>
+    </view>
+    
     <!--轮播图  可以用快速生成代码 usw-->
       <swiper :indicator-dots="true" :autoplay="true" :interval="2000" :duration="1000" :circular="true">
         <swiper-item v-for="(item,i) in swiperList" :key="i"> <!-- 循环肯定是绑定这里-->
@@ -38,7 +43,6 @@
               </view>
             </view>
           </view>
-        
       </view>
       
   </view>
@@ -106,7 +110,13 @@
           url:'/pages/cate/cate'
         })
       }
-       
+    },
+    
+    // 跳转到搜索页面
+    gotoSearch(){
+      uni.navigateTo({
+        url:'/subpkg/search/search'
+      })
     }
       
     }
@@ -148,5 +158,14 @@ swiper{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.search-box{
+  // 设置定位效果为吸顶
+  position: sticky;
+  // 吸顶的位置
+  top: 0;
+  // 提高层级，防止被轮播图覆盖
+  z-index: 999;
 }
 </style>
