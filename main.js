@@ -16,7 +16,7 @@ $http.baseUrl='https://api-hmugo-web.itheima.net/'
 uni.$showMsg=function(title='数据请求失败！',duration=1500){
   uni.showToast({
     title,
-    duration,
+    duration, 
     icon:'none',
   })
 }
@@ -26,6 +26,14 @@ $http.beforeRequest=function(options){
   uni.showLoading({
     title:'数据请求中....'
   })
+  
+  // 判断请求的是否为有权限的API接口
+  if(options.url.indexOf('/my')!==-1){
+    // 为请求头添加有身份认证的字段
+    options.header={
+      Authorization:store.m_user.token,
+    }
+  }
 }
 
 // 响应后的要做的事情
